@@ -35,7 +35,7 @@ function App() {
   const [currentValue, setCurrentValue] = React.useState(0);
   const [currentDesc, setCurrentDesc] = React.useState("");
   const [disableBtn, setDisableBtn] = React.useState(true);
-  const [trans, setTrans] = React.useState([
+  const [trans] = React.useState([
     { id: 1, desc: "salary", amt: 10000 },
     { id: 2, desc: "electric", amt: -5000 },
   ]);
@@ -58,8 +58,7 @@ function App() {
     setDisableBtn(true);
   };
 
-  const deleteTrans = (tranId) => {
-    console.log("tranId:" + tranId);
+  const deleteTrans = (tranId) => {    
     for (var i = 0; i < trans.length; i++) {
       if (trans[i].id === tranId) {
         let amt = parseFloat(trans[i].amt);
